@@ -1,4 +1,6 @@
 #!/bin/bash
-apt update
+apt update -y
 apt install -y git \
-    xterm
+    curl \
+    gnupg \
+    lsb-release

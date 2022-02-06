@@ -1,1 +1,3 @@
 #!/bin/bash
+curl -sSL http://get.gazebosim.org | sh
+apt install -y ros-galactic-gazebo-ros-pkgs
