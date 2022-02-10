@@ -9,7 +9,8 @@
         "--net", "host", 
         "-e", "DISPLAY=${env:DISPLAY}",
         "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
-	]
+	],
+	"postCreateCommand": "echo -e \"\nalias ros-init='source /opt/ros/galactic/setup.bash'\" >> ~/.bashrc"
 }
 
 
