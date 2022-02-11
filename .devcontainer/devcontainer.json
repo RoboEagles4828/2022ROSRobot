@@ -6,12 +6,11 @@
 	"settings": {},
 	"extensions": [],
 	"runArgs": [
-        "--net", "host", 
+		"--privileged",
+        "--net", "host",
         "-e", "DISPLAY=${env:DISPLAY}",
+		"-v", "${env:HOME}/.Xauthority:/mnt/.Xauthority",
         "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
 	],
-	"postCreateCommand": "echo -e \"\nalias ros-init='source /opt/ros/galactic/setup.bash'\" >> ~/.bashrc"
+	"postCreateCommand": "cat /mnt/.Xauthority | grep -a `uname -n` > /root/.Xauthority; echo -e \"\nalias ros-init='source /opt/ros/galactic/setup.bash'\" >> ~/.bashrc"
 }
-
-
-
