@@ -6,11 +6,12 @@
 	"settings": {},
 	"extensions": [],
 	"runArgs": [
-        "--net", "host", 
+		"--privileged",
+        "--net", "host",
         "-e", "DISPLAY=${env:DISPLAY}",
-        "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
-	]
+		// "-e", "AUTH=$(cat ${env:HOME}/.Xauthority | grep -a `uname -n`)",
+		"-v", "${env:HOME}/.Xauthority:/mnt/.Xauthority",
+        "-v", "/tmp/.X11-unix:/tmp/.X11-unix",
+	],
+	"postStartCommand": "cat /mnt/.Xauthority | grep -a `uname -n` > /root/.Xauthority"
 }
-
-
-
