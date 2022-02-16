@@ -1,9 +1,7 @@
 # 2022ROSRobot
 ROS Robot code for the 2022 season. 
 
-
 This change
-
 
 ## Windows 11 Install
 Execute the following commands from command line. You will restart several times throught this process.
