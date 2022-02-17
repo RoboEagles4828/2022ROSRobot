@@ -62,6 +62,11 @@ And press enter \
 
 16. Test that gazebo works by executing `gazebo` in the terminal
 
+
+## Ubuntu Install
+
+
+
 ## Debugging Containers
 
 **Nuke Option**: If you feel like you messed something up, your container does not start anymore, or you keep getting errors opening your workspace and you want to start from scratch then open docker desktop and delete all of you contianers, images and volumes.
