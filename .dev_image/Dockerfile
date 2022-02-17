@@ -10,3 +10,4 @@ RUN TZ=Etc/UTC apt -y install tzdata
 RUN apt -y install keyboard-configuration
 RUN install-ros2
 RUN install-gazebo
+RUN alias-setup

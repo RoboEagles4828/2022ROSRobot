@@ -17,5 +17,5 @@
         "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
 	],
 
-	"postStartCommand": "postStart"
+	"postStartCommand": "postStart" // Calls script in scripts folder
 }

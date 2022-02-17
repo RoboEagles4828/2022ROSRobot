@@ -3,4 +3,5 @@ apt update -y
 apt install -y git \
     curl \
     gnupg \
-    lsb-release
+    lsb-release \
+    nano
