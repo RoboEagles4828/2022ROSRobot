@@ -65,6 +65,33 @@ And press enter \
 
 ## Ubuntu Install
 
+1. Install VS Code
+https://code.visualstudio.com/download (Click the big blue .deb button right under the Linux penguin)
+
+2. Install Docker Engine (docker but without desktop app capabilities)
+https://docs.docker.com/engine/install/ubuntu/
+
+3. Go to your terminal by clicking "Show Applications" and selecting it, or Ctrl+Alt+T. In the terminal, run this command:
+xauth generate :0 . trusted
+
+4. Make sure you're logged into Git -> to do this, go to terminal, type
+
+git config --global user.name "Your Name"
+git config --global user.email "your.github.email.address@gmail.com"
+
+5. Open VS Code and install Remote Containers extension from the Extensions menu on the left
+
+6. Press F1 to bring up the command palette (fn+F1 on Mac)
+ - Type 'Remote-Containers: Clone Repository in Container Volume'
+ - Paste the HTTPS link to this repository, https://github.com/RoboEagles4828/2022ROSRobot.git, into the field
+ 
+7. Click "show log" on the notification that pops up. Click "Trust Folder" if you need to
+
+8. Once the install has finished, you can open a new terminal window with the plus sign on the bottom terminal window, or go to Terminal -> New Terminal in the top toolbar. Here, just type gazebo into the command line, press enter, and watch the magic unfold!
+
+9. Save the workspace by going to File -> Save Workspace As -> Show local -> Desktop
+
+Done! 
 
 
 ## Debugging Containers
