@@ -4,6 +4,10 @@
 	"name": "ROS-ROBOT",
 	"image": "ghcr.io/roboeagles4828/ros2-dev-env:main",
 	"settings": {},
+	"remoteEnv": {
+		"PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/scripts"
+	},
+
 	"extensions": [],
 	"runArgs": [
 		"--privileged",
@@ -12,5 +16,6 @@
 		"-v", "${env:HOME}/.Xauthority:/mnt/.Xauthority",
         "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
 	],
-	"postCreateCommand": "cat /mnt/.Xauthority | grep -a `uname -n` > /root/.Xauthority; echo -e \"\nalias ros-init='source /opt/ros/galactic/setup.bash'\" >> ~/.bashrc"
+
+	"postStartCommand": "postStart"
 }

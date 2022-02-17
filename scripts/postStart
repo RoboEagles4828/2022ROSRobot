@@ -1,0 +1,5 @@
+#!/bin/bash
+FILE=/mnt/.Xauthority
+if [[ -f "$FILE" ]]; then
+    cat /mnt/.Xauthority | grep -a `uname -n` > /root/.Xauthority
+fi
