@@ -1,7 +1,6 @@
 #!/bin/bash
 
 cat <<EOT >> ~/.bashrc
-export ROS_DOMAIN_ID=0
 source /opt/ros/galactic/setup.bash
-alias ros-init='source /opt/ros/galactic/setup.bash
+alias ros-init='source /opt/ros/galactic/setup.bash'
 EOT

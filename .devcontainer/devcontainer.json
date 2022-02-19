@@ -4,11 +4,18 @@
 	"name": "ROS-ROBOT",
 	"image": "ghcr.io/roboeagles4828/ros2-dev-env:main",
 	"settings": {},
+
+	"containerEnv": {
+		"ROS_DOMAIN_ID": 0,
+		"ROS_IP": "127.0.0.1",
+		"ROS_MASTER_URI": "http://127.0.0.1:11311"
+	},
+
 	"remoteEnv": {
 		"PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/scripts"
 	},
 
-	"extensions": [],
+	"extensions": ["ms-azuretools.vscode-docker"],
 	"runArgs": [
 		"--privileged",
         "--net", "host",
@@ -16,6 +23,11 @@
 		"-v", "${env:HOME}/.Xauthority:/mnt/.Xauthority",
         "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
 	],
+
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind", // Link your docker
+	],
+
 
 	"postCreateCommand": "/bin/bash -c ./.devcontainer/bashrc-setup",
 	"postStartCommand": "postStart" // Calls script in scripts folder
