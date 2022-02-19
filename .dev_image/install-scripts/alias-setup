@@ -1,3 +1,0 @@
-#!/bin/bash
-echo -e \"\nsource /opt/ros/galactic/setup.bash\" >> ~/.bashrc
-echo -e \"\nalias ros-init='source /opt/ros/galactic/setup.bash'\" >> ~/.bashrc

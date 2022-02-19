@@ -17,5 +17,6 @@
         "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
 	],
 
+	"postCreateCommand": "/bin/bash -c ./.devcontainer/bashrc-setup",
 	"postStartCommand": "postStart" // Calls script in scripts folder
 }
