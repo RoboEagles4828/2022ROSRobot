@@ -4,4 +4,5 @@ apt install -y git \
     curl \
     gnupg \
     lsb-release \
-    nano
+    nano \
+    iputils-ping

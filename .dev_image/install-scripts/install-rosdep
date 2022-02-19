@@ -1,0 +1,6 @@
+#!/bin/bash
+apt update
+apt install -y python3-rosdep
+rosdep init
+rosdep update
+apt install -y libpython3-dev python3-pip
