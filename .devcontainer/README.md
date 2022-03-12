@@ -9,7 +9,7 @@ Execute the following commands from command line. You will restart several times
 2. Install Docker \
 `winget install -e --id Docker.DockerDesktop` \
 **NOTE**: Docker will ask to update WSL2 kernal, here is the [installer](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) \
-![WSL2 Kernal](./.devcontainer/pics/docker-wsl2.png)
+![WSL2 Kernal](./pics/docker-wsl2.png)
 
 3. Set default WSL version to WSL2 \
 `wsl --set-default-version 2`
@@ -18,13 +18,13 @@ Execute the following commands from command line. You will restart several times
 `winget install -e --id Canonical.Ubuntu`
 
 5. Search for and open Ubuntu to finish install. (Press enter if it appears the terminal isn't doing anything)
-![Install Ubuntu](./.devcontainer/pics/ubuntu-install.png)
+![Install Ubuntu](./pics/ubuntu-install.png)
 
 6. Make Ubuntu your default WSL Distro by running this in windows terminal \
 `wsl -s Ubuntu` \
 then open Docker Desktop
 Settings -> Resources -> WSL Integration -> Enable and make sure Ubuntu is enabled -> Apply & Restart
-![Enable WSL in Docker](./.devcontainer/pics/docker-enable-wsl.png)
+![Enable WSL in Docker](./pics/docker-enable-wsl.png)
 
 7. Install GPU driver for WSLg \
 [Intel GPU](https://downloadcenter.intel.com/download/30579/Intel-Graphics-Windows-DCH-Drivers) \
@@ -42,19 +42,19 @@ Settings -> Resources -> WSL Integration -> Enable and make sure Ubuntu is enabl
     A window that looks like a terminal should appear. \
 
 10. Open VS Code and install the Remote Development extension \
-![Remote Development](./.devcontainer/pics/remotedevelopment.png)
+![Remote Development](./pics/remotedevelopment.png)
 
 11. In VS Code go to settings -> Extensions -> Remote - Containers -> Hit the check box to turn on `Execute in WSL`
-![Execute in WSL](./.devcontainer/pics/execute-in-wsl.png)
+![Execute in WSL](./pics/execute-in-wsl.png)
 
 12. Press F1 to bring up the command palette and use the command: \
 `Remote-Containers: Clone Repository in Container Volume..` \
-![Clone Repo in Container](./.devcontainer/pics/clone-command.png)
+![Clone Repo in Container](./pics/clone-command.png)
 
 13. Paste the git link for this repo: \
 `https://github.com/RoboEagles4828/2022ROSRobot.git` \
 And press enter \
-![Paste Git and hit Enter](./.devcontainer/pics/paste-enter.png)
+![Paste Git and hit Enter](./pics/paste-enter.png)
 
 14. The developement container will start to open, click on the notification in the bottom right to see progress.
 
