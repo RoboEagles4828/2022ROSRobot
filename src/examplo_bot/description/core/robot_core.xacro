@@ -3,6 +3,15 @@
 
     <xacro:include filename="macros.xacro"/>
 
+    <!-- PROPERTIES -->
+    <xacro:property name="chassis_length" value="0.7" />
+    <xacro:property name="chassis_width" value="0.65" />
+    <xacro:property name="chassis_height" value="0.1" />
+    <xacro:property name="wheel_radius" value="0.09" />
+    <xacro:property name="wheel_thickness" value="0.04" />
+    <xacro:property name="wheel_seperation" value="0.21" />
+
+
     <material name="white">
         <color rgba="1 1 1 1" />
     </material>
@@ -27,10 +36,6 @@
 
     
     <!-- CHASSIS LINK -->
-    <xacro:property name="chassis_length" value="0.7" />
-    <xacro:property name="chassis_width" value="0.65" />
-    <xacro:property name="chassis_height" value="0.1" />
-
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis_link"/>
@@ -59,19 +64,14 @@
     <gazebo reference="chassis_link">
         <material>Gazebo/White</material>
     </gazebo>
-
-    <!-- WHEEL PROPERTIES -->
-    <xacro:property name="wheel_radius" value="0.09" />
-    <xacro:property name="wheel_thickness" value="0.04" />
-    <xacro:property name="wheel_seperation" value="0.21" />
+    
 
 
-    <!-- WHEEL LINKS LEFT 1 -->
-    <joint name="left_wheel_1_joint" type="continuous">
+    <!-- WHEEL LINKS LEFT 1 (CASTER) -->
+    <joint name="left_wheel_1_joint" type="fixed">
         <parent link="base_link"/>
         <child link="left_wheel_1_link"/>
         <origin xyz="${wheel_seperation} ${chassis_width/2 + wheel_thickness/2} 0" rpy="-${pi/2} 0 0" />
-        <axis xyz="0 0 1"/>
     </joint>
 
     <link name="left_wheel_1_link">
@@ -93,6 +93,8 @@
 
     <gazebo reference="left_wheel_1_link">
         <material>Gazebo/Blue</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
     </gazebo>
 
 
@@ -126,12 +128,11 @@
     </gazebo>
 
 
-    <!-- WHEEL LINKS LEFT 3 -->
-    <joint name="left_wheel_3_joint" type="continuous">
+    <!-- WHEEL LINKS LEFT 3 (CASTER) -->
+    <joint name="left_wheel_3_joint" type="fixed">
         <parent link="base_link"/>
         <child link="left_wheel_3_link"/>
         <origin xyz="-${wheel_seperation} ${chassis_width/2 + wheel_thickness/2} 0" rpy="-${pi/2} 0 0" />
-        <axis xyz="0 0 1"/>
     </joint>
 
     <link name="left_wheel_3_link">
@@ -153,17 +154,18 @@
 
     <gazebo reference="left_wheel_3_link">
         <material>Gazebo/Blue</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
     </gazebo>
 
 
 
     
-    <!-- WHEEL LINKS RIGHT 1 -->
-    <joint name="right_wheel_1_joint" type="continuous">
+    <!-- WHEEL LINKS RIGHT 1 (CASTER) -->
+    <joint name="right_wheel_1_joint" type="fixed">
         <parent link="base_link"/>
         <child link="right_wheel_1_link"/>
         <origin xyz="${wheel_seperation} -${chassis_width/2 + wheel_thickness/2} 0" rpy="${pi/2} 0 0" />
-        <axis xyz="0 0 -1"/>
     </joint>
 
     <link name="right_wheel_1_link">
@@ -185,6 +187,8 @@
 
     <gazebo reference="right_wheel_1_link">
         <material>Gazebo/Blue</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
     </gazebo>
 
 
@@ -218,12 +222,11 @@
     </gazebo>
 
 
-    <!-- WHEEL LINKS RIGHT 3 -->
-    <joint name="right_wheel_3_joint" type="continuous">
+    <!-- WHEEL LINKS RIGHT 3 (CASTER) -->
+    <joint name="right_wheel_3_joint" type="fixed">
         <parent link="base_link"/>
         <child link="right_wheel_3_link"/>
         <origin xyz="-${wheel_seperation} -${chassis_width/2 + wheel_thickness/2} 0" rpy="${pi/2} 0 0" />
-        <axis xyz="0 0 -1"/>
     </joint>
 
     <link name="right_wheel_3_link">
@@ -245,5 +248,7 @@
 
     <gazebo reference="right_wheel_3_link">
         <material>Gazebo/Blue</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
     </gazebo>
 </robot>
