@@ -70,7 +70,7 @@ def generate_launch_description():
                 'autorepeat_rate': 20.0,
             }])
 
-    config_filepath = os.path.join(get_package_share_directory('teleop_twist_joy'), 'xbox.config.yaml')
+    config_filepath = os.path.join(get_package_share_directory('teleop_twist_joy'), 'config/xbox.config.yaml')
     teleop = Node(
         package='teleop_twist_joy', 
         executable='teleop_node',
