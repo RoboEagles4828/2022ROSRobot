@@ -59,6 +59,17 @@ def generate_launch_description():
         output='screen'
     )
 
+    # Joystick Teleop
+    teleop_joy = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory('teleop_twist_joy'),'launch','teleop-launch.py'
+                )]), launch_arguments={
+                    'joy_config': 'xbox',
+                    'joy_dev': 'dev/input/',
+                    'joy_vel': '\diff_drive_base_controller\cmd_vel_unstamped'
+                    }.items()
+    )
+
 
     # Launch!
     return LaunchDescription([
@@ -76,5 +87,6 @@ def generate_launch_description():
         ),
         gazebo,
         node_robot_state_publisher,
-        spawn_entity
+        spawn_entity,
+        teleop_joy
     ])
