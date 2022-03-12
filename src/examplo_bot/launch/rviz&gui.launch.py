@@ -4,7 +4,7 @@ from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
 from launch.substitutions import LaunchConfiguration
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, ExecuteProcess
 from launch_ros.actions import Node
 
 import xacro
@@ -29,6 +29,20 @@ def generate_launch_description():
         parameters=[params]
     )
 
+    # Create the publiser gui
+    joint_state_publisher_gui = Node(
+        package='joint_state_publisher_gui',
+        executable='joint_state_publisher_gui',
+        output='screen'
+    )
+
+    # Start Rviz2 with basic view
+    rviz2_config_path = os.path.join(get_package_share_directory('examplo_bot'), 'config/basic.rviz')
+    run_rviz2 = ExecuteProcess(
+        cmd=['rviz2', '-d', rviz2_config_path],
+        output='screen'
+    )
+
 
     # Launch!
     return LaunchDescription([
@@ -37,5 +51,7 @@ def generate_launch_description():
             default_value='false',
             description='Use sim time if true'),
 
-        node_robot_state_publisher
+        node_robot_state_publisher,
+        joint_state_publisher_gui,
+        run_rviz2
     ])
